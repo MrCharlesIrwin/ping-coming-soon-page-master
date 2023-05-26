@@ -1,0 +1,145 @@
+$Primary-100: hsl(223, 87%, 75%);
+$Primary-200: hsl(223, 87%, 63%);
+
+$Secondary-100: hsl(223, 100%, 88%);
+$Secondary-200: hsl(354, 100%, 66%);
+
+$Neutral-100: hsl(0, 0%, 59%);
+$Neutral-200: hsl(209, 33%, 12%);
+
+body {
+  font-family: serif;
+}
+.main {
+  margin: 0 auto;
+  width: 375px;
+  text-align: center;
+  &__logo {
+    margin-top: 4rem;
+    width: 4.5rem;
+  }
+  &__h1 {
+    margin: 2rem auto 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $Neutral-100;
+    em {
+      font-weight: 700;
+      color: $Neutral-200;
+    }
+  }
+  &__p {
+    margin: 1.5rem auto 2.5rem;
+    font-weight: 400;
+    color: $Neutral-200;
+  }
+  &__dashboard {
+    margin: 5rem auto;
+    width: 90%;
+    img {
+      width: 100%;
+    }
+  }
+}
+.form {
+  $input-height: 3rem;
+  $input-width: 20rem;
+  $input-radious: 2rem;
+
+  display: flex;
+  place-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  &__email {
+    box-sizing: border-box;
+    padding-left: 2rem;
+    height: $input-height;
+    width: $input-width;
+    border-radius: $input-radious;
+    border: 1px solid $Primary-100;
+    outline: none;
+    &::placeholder {
+      color: $Primary-100;
+    }
+  }
+  &__btn {
+    background-color: $Primary-200;
+    border-radius: $input-radious;
+    border: none;
+    height: $input-height;
+    width: $input-width;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+}
+.socials {
+  display: flex;
+  place-content: center;
+  gap: 2rem;
+  &__icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $Secondary-100;
+    border-radius: 50%;
+    padding: 0.5rem;
+    height: 1.5rem;
+    aspect-ratio: 1;
+    color: $Primary-200;
+    &:hover {
+      cursor: pointer;
+      background-color: $Primary-200;
+      color: white;
+    }
+  }
+}
+.copy-right {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  font-weight: 350;
+  color: $Neutral-100;
+}
+
+/// error
+.invalid-message {
+  display: none;
+  color: $Secondary-200;
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+  padding-left: 0;
+  margin-bottom: .9rem;
+  text-align: center;
+}
+.active {
+  display: block;
+  border-color: $Secondary-200;
+}
+@media (min-width: 660px) {
+  .main {
+    width: 660px;
+    &__h1 {
+      font-size: 2.4rem;
+    }
+    &__dashboard {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .form {
+    &__email {
+      width: 23rem;
+    }
+    &__btn {
+      width: 15rem;
+    }
+  }
+  .invalid-message {
+    padding-left: 2rem;
+  text-align: left;
+  }
+}
